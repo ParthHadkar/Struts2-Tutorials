@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">  
+<struts>
+<package name="package1" extends="struts-default">
+<interceptors>
+<interceptor name="Uppercase" class="com.p06customInterceptor.interceptors.UppercaseInterceptor"></interceptor>
+<interceptor name="Lowercase" class="com.p06customInterceptor.interceptors.UppercaseInterceptor2"></interceptor>
+
+<interceptor-stack name="MyUppercaseStack">
+<interceptor-ref name="defaultStack"></interceptor-ref>
+<interceptor-ref name="Lowercase"></interceptor-ref>
+</interceptor-stack>
+</interceptors>
+<!-- <default-interceptor-ref name="MyUppercaseStack"></default-interceptor-ref> -->
+<action name="Login" class="com.p06customInterceptor.model.Login">
+<interceptor-ref name="defaultStack"></interceptor-ref>
+<interceptor-ref name="Uppercase"></interceptor-ref>
+<interceptor-ref name="MyUppercaseStack"></interceptor-ref>
+<result name="success" type="dispatcher">Success.jsp</result>
+<result name="error">Error.jsp</result>
+</action>
+</package>
+</struts>
