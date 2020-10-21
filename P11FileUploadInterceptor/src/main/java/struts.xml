@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">  
+<struts>
+<package name="package1" extends="struts-default">
+<action name="UserImage">
+<result name="success">UserImage</result>
+</action>
+<action name="Register" class="com.P11FileUploadInterceptor.model.Users">
+<interceptor-ref name="defaultStack"></interceptor-ref>
+<interceptor-ref name="fileUpload">
+<param name="maximumSize">2097152</param>
+<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
+</interceptor-ref>
+<result name="success" type="dispatcher">Success.jsp</result>
+<result name="error">Error.jsp</result>
+<result name="input">Register.jsp</result>
+</action>
+</package>
+</struts>
