@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">  
+<struts>
+<package name="package1" namespace="/" extends="json-default">
+<action name="Users" class="com.P24AjaxTags.model.Users">
+<result name="success" type="dispatcher">Success.jsp</result>
+</action>
+<action name="Users1" class="com.P24AjaxTags.model.Users">
+<result name="success" type="dispatcher">Error.jsp</result>
+</action>
+<action name="Users2" class="com.P24AjaxTags.model.Users">
+<result name="success" type="dispatcher">Success.jsp</result>
+</action>
+<action name="Users3" class="com.P24AjaxTags.model.Users">
+<result name="success" type="dispatcher">Error.jsp</result>
+</action>
+<action name="Users4" class="com.P24AjaxTags.model.Users">
+<result name="success" type="dispatcher">Success.jsp</result>
+</action>
+<action name="Users5" class="com.P24AjaxTags.model.Users">
+<result name="success" type="dispatcher">Error.jsp</result>
+</action>
+</package>
+</struts>
