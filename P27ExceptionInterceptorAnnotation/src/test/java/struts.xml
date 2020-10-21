@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">  
+<struts>
+
+<package name="package1" extends="struts-default">
+
+<global-results>
+<result name="myexception">GlobalResult.jsp</result>
+</global-results>
+
+<global-exception-mappings>
+<exception-mapping result="myexception" exception="java.lang.Exception"></exception-mapping>
+</global-exception-mappings>
+
+<action name="Login" class="com.P27ExceptionInterceptorAnnotation.model.Login">
+<interceptor-ref name="params"/>
+<interceptor-ref name="exception"/>
+<!-- <exception-mapping result="myexception" exception="java.lang.Exception"></exception-mapping> -->
+<result name="success" type="dispatcher">Success.jsp</result>
+<result name="error">Error.jsp</result>
+</action>
+</package>
+
+</struts>
