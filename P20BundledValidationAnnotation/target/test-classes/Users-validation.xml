@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+ <validators>
+ <!-- Plain-Validator Syntax -->  
+ <validator type="required">
+ <param name="fieldName">gender</param>
+ <param name="trim">true</param>
+ <message>Gender Are Required</message>
+ </validator> 
+ 
+<!-- Field-Validator Syntax -->  
+<field name="username">
+<field-validator type="requiredstring">
+<param name="trim">true</param>
+<message>Username can't be empty</message>
+</field-validator>
+</field>
+ 
+ <field name="MobileNo">
+<field-validator type="regex">
+<param name="regexExpression"><![CDATA[[0-9]{10}]]></param>
+<param name="trim">true</param>
+<param name="caseSensitive">true</param>
+<message>MobileNo must be 10 digits</message>
+</field-validator>
+</field>
+ 
+ <field name="EmailId">
+<field-validator type="requiredstring">
+<param name="trim">true</param>
+<message>EmailId can't be empty</message>
+</field-validator>
+<field-validator type="regex"><!-- email -->
+<param name="regexExpression">[a-z0-9A-Z]{5,32}[@][a-zA-Z]{5,10}[.][a-z]{3}</param>
+<message>EmailId must be valid</message>
+</field-validator>
+</field>
+
+<field name="Age">
+<field-validator type="int">
+<param name="min">18</param>
+<param name="max">100</param>
+<message>Age must be between ${min} to ${max}</message>
+</field-validator>
+</field>
+
+<field name="Height">
+<field-validator type="double">
+<param name="minInclusive">4.0</param>
+<!-- <param name="maxInclusive">10.0</param>
+<param name="minExclusive">4.0</param> -->
+<param name="maxExclusive">10.0</param>
+<message>Height must be between ${minInclusive} to ${maxExclusive}</message>
+</field-validator>
+</field>
+
+<field name="Url">
+<field-validator type="requiredstring">
+<param name="trim">true</param>
+<message>Url can't be empty</message>
+</field-validator>
+<field-validator type="url">
+<message>URL must be correct e.g. http://www.google.com </message>
+</field-validator>
+</field>
+
+<field name="Dob">
+<field-validator type="required">
+<param name="trim">true</param>
+<message>Dob can't be empty</message>
+</field-validator>
+<field-validator type="date">
+<param name="min">01/01/1980</param>
+<param name="max">01/01/2030</param>
+<message>Dob must be between ${min} to ${max}</message>
+</field-validator>
+</field>
+
+<field name="Password">
+<field-validator type="requiredstring">
+<param name="trim">true</param>
+<message>Password can't be empty</message>
+</field-validator>
+<field-validator type="stringlength">
+<param name="trim">true</param>
+<param name="minLength">8</param>
+<param name="maxLength">32</param>
+<message>Password must be between ${minLength} to ${maxLength}</message>
+</field-validator>
+</field>
+
+<field name="cPassword">
+<field-validator type="requiredstring">
+<param name="trim">true</param>
+<message>Confirm Password can't be empty</message>
+</field-validator>
+<field-validator type="stringlength">
+<param name="trim">true</param>
+<param name="minLength">8</param>
+<param name="maxLength">32</param>
+<message>Confirm Password must be between ${minLength} to ${maxLength}</message>
+</field-validator>
+<field-validator type="fieldexpression">
+<param name="expression">(Password == cPassword)</param>
+<message>Password and Confirm password must be same</message>
+</field-validator>
+</field>
+
+ </validators>
