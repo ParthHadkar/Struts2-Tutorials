@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 25, 2019 6:53:21 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.P28HibernateAndStruts2.model.Users" table="USERS">
+        <id name="id" type="int" access="field">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="Name" />
+        </property>
+        <property name="emailId" type="java.lang.String">
+            <column name="EMAILID" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="mobileNo" type="long">
+            <column name="MOBILENO" />
+        </property>
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>
+    </class>
+</hibernate-mapping>
