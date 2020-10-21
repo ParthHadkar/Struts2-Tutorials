@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">  
+<struts>
+<!-- <constant name = "struts.devMode" value = "true" />
+   <constant name = "struts.custom.i18n.resources" value = "ApplicationResources"/>
+    -->
+<package name="package1" extends="struts-default">
+<action name="generator">
+<result name="success" type="dispatcher">generator.jsp</result>
+</action>
+<action name="actions" class="com.P26StrutsDataTags.model.action.User">
+<result name="success" type="dispatcher">actionSuccess.jsp</result>
+</action>
+<action name="include">
+<result name="success" type="dispatcher">includeSuccess.jsp</result>
+</action>
+<action name="bean">
+<result name="success" type="dispatcher">beanSuccess.jsp</result>
+</action>
+<action name="date" class="com.P26StrutsDataTags.model.date.CurrentDate">
+<result name="success" type="dispatcher">dateSuccess.jsp</result>
+</action>
+<action name="property_push_set" class="com.P26StrutsDataTags.model.property_push_set.SystemDetails">
+<result name="success" type="dispatcher">property_push_setSuccess.jsp</result>
+</action>
+<action name="text" class="com.P26StrutsDataTags.model.text.User">
+<result name="success" type="dispatcher">textSuccess.jsp</result>
+</action>
+<action name="url">
+<result name="success" type="dispatcher">urlSuccess.jsp</result>
+</action>
+</package>
+</struts>
