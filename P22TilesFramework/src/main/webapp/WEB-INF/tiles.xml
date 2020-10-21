@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  tiles-definitions PUBLIC "-//Apache Software Foundation//
+DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 	
+<tiles-definitions>
+<definition name="Success-tiles" template="/LayoutManager.jsp">
+<put-attribute name="title" value="Welcome Page"></put-attribute>
+<put-attribute name="header" value="/Header.jsp"></put-attribute>
+<put-attribute name="body" value="/Success.jsp"></put-attribute>
+<!-- <put-attribute name="footer" value="/Footer.jsp"></put-attribute> -->
+</definition>
+
+<definition name="Error-tiles" template="/LayoutManager.jsp">
+<put-attribute name="title" value="Error Page"></put-attribute>
+<put-attribute name="header" value="/Header.jsp"></put-attribute>
+<put-attribute name="body" value="/Error.jsp"></put-attribute>
+<!-- <put-attribute name="footer" value="/Footer.jsp"></put-attribute> -->
+</definition>
+
+<definition name="lion-tiles"  extends="Success-tiles">
+<put-attribute name="title" value="Lion"></put-attribute>
+<put-attribute name="body" value="/Lion.jsp"></put-attribute>
+</definition>
+
+<definition name="tiger-tiles"  extends="Success-tiles">
+<put-attribute name="title" value="Tiger"></put-attribute>
+<put-attribute name="body" value="/Tiger.jsp"></put-attribute>
+</definition>
+</tiles-definitions>

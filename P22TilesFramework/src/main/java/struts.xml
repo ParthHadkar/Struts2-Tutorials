@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts  
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">  
+<struts>
+<package name="package1" extends="tiles-default">
+<action name="Login" class="com.P22TilesFramework.model.Login">
+<result name="success" type="tiles">Success-tiles</result>
+<result name="error" type="tiles">Error-tiles</result>
+</action>
+<!-- <action name = "*Menu" method = "{1}" class="com.P22TilesFramework.model.Menu">
+<result name="lion" type="tiles">lion-tiles</result>
+<result name="tiger" type="tiles">tiger-tiles</result>
+</action> -->
+<action name = "lionMenu" method = "lion" class="com.P22TilesFramework.model.Menu">
+<result name="lion" type="tiles">lion-tiles</result>
+</action>
+<action name = "tigerMenu" method = "tiger" class="com.P22TilesFramework.model.Menu">
+<result name="tiger" type="tiles">tiger-tiles</result>
+</action>
+</package>
+</struts>
